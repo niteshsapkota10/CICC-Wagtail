@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body %}
+<h1>Projects</h1>
+
+
+<div class="container">
+    <div class="row">
+        {% for project in projects %}
+        <div class="col-lg-6">
+            {% image project.specific.project_image width-300 as tmp_photo %}
+            <img src="{{tmp_photo.url}}" alt="" width="350px" height="400px">
+            <h2>{{project.project_title}}</h2>
+            <p>{{project.project_subtitle}}</p>
+            <p><a class="btn btn-secondary" href="{% pageurl project %}">View details &raquo;</a></p>
+            <hr>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body %}
+<h1>Services</h1>
+
+
+<div class="container">
+    <div class="row">
+        {% for service in services %}
+        <div class="col-lg-6">
+            {% image service.specific.service_image width-300 as tmp_photo %}
+            <img src="{{ tmp_photo.url }}" alt="" width="400px" height="350px">
+            <h2>{{service.title}}</h2>
+            <p>{{service.service_subtitle}}</p>
+            <p><a class="btn btn-secondary" href="{% pageurl service %}">View details &raquo;</a></p>
+            <hr>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

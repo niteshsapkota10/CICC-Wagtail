@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body %}
+
+
+<h1>{{self.service_title}}</h1>
+<h2>{{self.service_subtitle}}</h2>
+<h3>{{self.service_body}}</h3>
+{% image self.specific.service_image width-400 as tmp_photo %}
+<img src="{{ tmp_photo.url }}" alt="" width="500px" height="500px">
+
+
+
+{% endblock %}

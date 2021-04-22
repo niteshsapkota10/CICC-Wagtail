@@ -1,0 +1,318 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/carousel/carousel.css' %}">
+<style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    .btn-outline {
+        color: #4fbfa8;
+        background-color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        letter-spacing: 0.05em;
+        border-style: solid;
+        border-color: #4fbfa8;
+        border-width: 1px;
+        border-radius: 0;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+</style>
+<!-- <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        Hello Carousel
+        <div class="carousel-item active">
+            <img src="{% static '/images/cicc_logo.jpg' %}" alt="Image ..." class="bd-placeholder-img" width="100%"
+                height="100%">
+
+            <div class="container">
+                <div class="carousel-caption text-start">
+                    <h1>Example headline.</h1>
+                    <p>Some representative placeholder content for the first slide of the carousel.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static '/images/cicc_logo.jpg' %}" alt="Image ..." class="bd-placeholder-img" width="100%"
+                height="100%">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Another example headline.</h1>
+                    <p>Some representative placeholder content for the second slide of the carousel.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static '/images/cicc_logo.jpg' %}" alt="Image ..." class="bd-placeholder-img" width="100%"
+                height="100%">
+
+            <div class="container">
+                <div class="carousel-caption text-end">
+                    <h1>One more for good measure.</h1>
+                    <p>Some representative placeholder content for the third slide of this carousel.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div> -->
+
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            {% image first_image.specific.banner_image width-400 as tmp_photo %}
+            <img src="{{ tmp_photo.url }}" alt="Image ..." class="bd-placeholder-img" width="100%" height="100%">
+
+
+            <div class="container">
+                <div class="carousel-caption text-start">
+                    <h1>{{first_image.specific.banner_title}}</h1>
+                    <p>{{first_image.specific.banner_subtitle}}</p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                </div>
+            </div>
+        </div>
+        {% for img in images %}
+        <div class="carousel-item">
+            <!-- <img src="{% image img.specific.banner_image fill-320x240 %}" alt="Image ..." class="bd-placeholder-img" width="100%"
+                height="100%"> -->
+
+            {% image img.specific.banner_image width-500 height-500 %}
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>{{img.specific.banner_title}}</h1>
+                    <p>{{img.specific.banner_subtitle}}</p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+
+
+<!-- Marketing messaging and featurettes
+  ================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md-6">
+            <h2 class="featurette-heading" id="about_us">{{about.about_heading}}<span
+                    class="text-muted">{{about.about_subheading}}</span></h2>
+            <p class="lead">{{about.about_description}}</p>
+        </div>
+        <div class="col-md-6">
+            <!-- <img src="{% static '/images/cicc_logo.jpg' %}" alt="Image ..."
+                class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                height="500"> -->
+            {% image about.specific.about_image width-400 as tmp_photo%}
+            <img src="{{ tmp_photo.url }}" alt="Image ..."
+                class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                height="500">
+
+        </div>
+    </div>
+
+    <div
+        style="background-color:aquamarine; font-family: 'Courier New', Courier, monospace; font-size: 3rem; text-align: center; justify-content: center; margin-top: 5rem;">
+        Services</div>
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+        {% for services in services_three %}
+        <div class="col-lg-4">
+            <!-- <img src="{% static '/images/cicc_logo.jpg' %}" alt="Image ..." class="bd-placeholder-img rounded-circle"
+                width="300" height="350"> -->
+            {% image services.specific.service_image width-400 as tmp_photo %}
+            <img src="{{ tmp_photo.url }}" alt="Image..." width="300" height="350"
+                class="bd-placeholder-img rounded-circle">
+            <h2>{{services.title}}</h2>
+            <p>{{services.service_subtitle}}</p>
+            <p><a class="btn btn-secondary" href="{% pageurl services %}">View details &raquo;</a></p>
+        </div>
+        {% endfor %}
+        <!-- /.col-lg-4 -->
+        <!-- <div class="col-lg-4">
+            <img src="{% static '/images/cicc_logo.jpg' %}" alt="Image ..." class="bd-placeholder-img rounded-circle"
+                width="300" height="350">
+
+            <h2>Heading</h2>
+            <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second
+                column.</p>
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        </div> -->
+        <!-- /.col-lg-4 -->
+        <!-- <div class="col-lg-4">
+            <img src="{% static '/images/cicc_logo.jpg' %}" alt="Image ..." class="bd-placeholder-img rounded-circle"
+                width="300" height="350">
+
+            <h2>Heading</h2>
+            <p>And lastly this, the third column of representative placeholder content.</p>
+            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        </div> -->
+        <!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+    <div class="row">
+        <div class="col-2">
+            <a href="{% slugurl 'servicepage' %}" class=".btn btn-outline">More Services...</a>
+        </div>
+    </div>
+
+
+    <!-- START THE FEATURETTES -->
+
+
+
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="row">
+            <div class="col-md-5 order-md-2">
+                <h2 class="featurette-heading">{{projects.project_heading}}<span
+                        class="text-muted">{{projects.project_subheading}}</span></h2>
+                <p class="lead">{{projects.project_description}}</p>
+            </div>
+
+            <div class="col-md-7 order-md-1">
+                {% image projects.specific.project_image width-400 as tmp_photo %}
+                <img src="{{ tmp_photo.url }}" alt="Image ..."
+                    class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="600"
+                    height="600">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <a href="{% slugurl 'our-projects' %}" class=".btn btn-outline">View Projects...</a>
+            </div>
+        </div>
+
+
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="row">
+            <div class="col-md-7">
+                <h2 class="featurette-heading" style="margin-top: 1rem;">Get In Touch <span class="text-muted">with
+                        us.</span></h2>
+                <div class="card" style="width: 18rem; background-color: #06DABF; margin-left: 5rem;">
+                    <div class="card-body">
+                        <h3 class="">9878877887</h3>
+                        <h3 class="">cicc@mail.com</h3>
+                    </div>
+                  </div>
+                <h3>Request a Call From Us</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <form>
+                            <div class="row">
+                                <div class="col-5">
+                                    <label for="full_name">Full Name:</label>
+                                </div>
+                                <div class="col-7">
+                                    <input type="text" class="form-control" name="full_name" , id="full_name">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5">
+                                    <label for="email">Email Address:</label>
+                                </div>
+                                <div class="col-7">
+                                    <input type="email" class="form-control" name="email" , id="email">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5">
+                                    <label for="number">Contact Number:</label>
+                                </div>
+                                <div class="col-7">
+                                    <input type="text" class="form-control" name="number" , id="number">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5">
+                                    <label for="purpose">Contact Purpose:</label>
+                                </div>
+                                <div class="col-7">
+                                    <input type="text" class="form-control" name="purpose" , id="purpose">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5">
+                                    <input class="btn btn-primary" type="submit" value="Request a Call">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="row">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7064.5066262105165!2d85.34166667496578!3d27.709464079604626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1979b37f998b%3A0x89608cc1a83425f1!2sGaushala%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1618986650411!5m2!1sen!2snp"
+                        width="250" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+</div><!-- /.container -->
+
+{% endblock %}
