@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Aclonica&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(to right, #fa709a, #fee140);
+}
+.m-f {
+  font-family: "Aclonica", sans-serif;
+  text-transform: uppercase;
+}
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: background-color 0.5s ease;
+  z-index: 999;
+}
+.scrolling-active {
+  background-color: #fff;
+  box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
+}
+
+.scrolling-active .nav-link::after {
+  background-color: #313131;
+}
+.nav-block {
+  display: block;
+  font-weight: bold;
+}
+.nav-block :hover {
+  color: red;
+  background-color: aliceblue;
+  border-bottom: 2px solid salmon;
+}
+.btn {
+  background-color: transparent;
+  border: 3px solid #ffffff;
+  padding: 15px 35px;
+  font-weight: bolder;
+  text-decoration: none;
+  color: #000000;
+  margin-right: 15px;
+  transition: all 400ms ease-in-out;
+}
+.btn-fill {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.btn-fill:hover {
+  background-color: blueviolet;
+  border-color: transparent;
+}
+
+.btn-trans:hover {
+  background-color: blueviolet;
+  color: #000000;
+  border-color: transparent;
+}
+.snow {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+}
+
+.snow .svg {
+  position: absolute;
+  width: 90%;
+}
+
+#snow-top-layer {
+  will-change: transform;
+  transform: translateY(-768px);
+  animation: fall 22.5s infinite linear;
+}
+
+#snow-bottom-layer {
+  will-change: transform;
+  transform: translateY(-768px);
+  animation: fall 45s infinite linear;
+}
+
+@keyframes fall {
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.vlog-section {
+  background-color: #7b2cbf;
+}
+.find-section {
+  background-color: #ffffff;
+}
+.f-vlog {
+  border: 2px solid #ffffff;
+}
+.our-services {
+  background-color: #ffffff;
+}
+
+/* Our Services CSS start */
+
+.card {
+  cursor: pointer;
+}
+.hd {
+  font-size: 25px;
+  font-weight: 550;
+}
+
+.card.hover,
+.card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+.img {
+  margin-bottom: 35px;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
+}
+.card-title {
+  font-weight: 600;
+}
+/* Our Services CSS End */
+.greater {
+  margin: 0;
+  padding: 0;
+}
+.blueviolet {
+  color: blueviolet;
+}
+
+/*Login CSS */
+.login-form {
+  background-color: #ffffff;
+}
+/*Login CSS END */
+
+/* Services CSS */
+@import url("https://fonts.googleapis.com/css?family=Poppins|Ubuntu&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.services {
+  display: block;
+  position: relative;
+  padding: 0;
+}
+.container {
+  max-width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.services-title {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.services-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-top: -15px;
+}
+
+.title {
+  margin-left: 15px;
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-bottom: 40px;
+  text-align: center;
+  top: 26px;
+}
+.services-title h2 span {
+  color: #3c44a9;
+}
+.services-title h2 {
+  margin-top: -10px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 700;
+  color: #333;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.box {
+  background-color: #fff;
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  max-width: 33.333333%;
+}
+.ser-box {
+  margin-top: 75px;
+  padding-bottom: 30px;
+  padding: 0 60px;
+  min-height: 198px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 0 25px 0 rgba(20, 27, 202, 0.17);
+}
+
+.ser-box .icon {
+  margin-bottom: 0;
+  transform: translateY(-50%);
+  text-align: center;
+}
+.ser-box h4 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+  color: #3c44a9;
+  margin-top: -10px;
+  font-family: "Ubuntu", sans-serif;
+}
+.ser-box p {
+  color: #61648e;
+  line-height: 24px;
+  margin-top: 20px;
+  font-family: "Ubuntu", sans-serif;
+}
+.ser-box:hover {
+  box-shadow: 0 0 25px 0 rgba(20, 27, 201, 0.05);
+  cursor: pointer;
+  background-image: linear-gradient(-45deg, #fb0054 0%, #f55b2a 100%);
+}
+
+.ser-box:hover h4,
+.ser-box:hover p {
+  color: #fff;
+}
+
+.services-box .box:nth-child(1) .ser-box:hover {
+  background-image: linear-gradient(-45deg, #34b5bf 0%, #210c59 100%);
+}
+
+.services-box .box:nth-child(3) .ser-box:hover {
+  background-image: linear-gradient(-45deg, #3615e7 0%, #44a2f6 100%);
+}
+
+.services-box .box:nth-child(4) .ser-box:hover {
+  background-image: linear-gradient(-45deg, #fc6a0e 0%, #fdb642 100%);
+}
+
+.services-box .box:nth-child(5) .ser-box:hover {
+  background-image: linear-gradient(-45deg, #8d40fb 0%, #5a57fb 100%);
+}
+
+.services-box .box:nth-child(6) .ser-box:hover {
+  background-image: linear-gradient(-45deg, #27b88d 0%, #22dd73 100%);
+}
+
+/********-Responsive-************/
+
+@media (min-width: 768px) {
+  .box {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+@media (min-width: 600px) {
+  .box {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .box {
+    flex: 0 0 33.333333% !important;
+    max-width: 33.333333% !important;
+  }
+}
+
+@media (min-width: 414px) {
+  .box {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 370px) {
+  .box {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 320px) {
+  .box {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}

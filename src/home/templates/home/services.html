@@ -3,14 +3,20 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 
 {% block body %}
-
-
-<h1>{{self.service_title}}</h1>
-<h2>{{self.service_subtitle}}</h2>
-<h3>{{self.service_body}}</h3>
-{% image self.specific.service_image width-400 as tmp_photo %}
-<img src="{{ tmp_photo.url }}" alt="" width="500px" height="500px">
-
+<br /><br /><br /><br><br>
+<div class="container find-section">
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{self.service_title}}</h5>
+          <p class="card-text"><small class="text-muted">{{self.service_subtitle}}</small></p>
+          <p class="card-text">{{self.service_body}}</p>
+        </div>
+        {% image self.specific.service_image width-400 as tmp_photo %}
+        <center><img class="card-bottom" src="{{tmp_photo.url}}" alt="Card image cap" height="450px" width=35%></center>
+      </div>
+</div>
+<br/>
+<br/>
 
 
 {% endblock %}

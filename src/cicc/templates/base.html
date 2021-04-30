@@ -1,91 +1,208 @@
-{% load static %}
-{% load wagtailcore_tags wagtailimages_tags %}
-<!doctype html>
-<html lang="en">
+{% load static %} {% load wagtailcore_tags wagtailimages_tags %}
 
-<head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
 
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
 
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/cicc.css' %}" />
+    <title>Civil Innovators</title>
+  </head>
 
-
-    
-
-    <title>CICC</title>
-</head>
-
-<body>
+  <body>
+    <!-- NavBar Start -->
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #06DABF;">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">CICC</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% slugurl 'servicepage' %}">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% slugurl 'our-projects' %}">Our Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#"
+          ><img
+            src="{% static 'cicc_logo.jpg'%}"
+            alt="logo"
+            height="75px"
+            width="75px"
+        /></a>
+        <a class="navbar-brand" href="#" style="color: blueviolet"
+          ><b class="m-f">CICC</b></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
+          <div class="nav-block">
+            <a class="nav-link my-2 my-sm-0" href="#"
+              ><span class="fa fa-home"></span>Home</a
+            >
+          </div>
+          <div class="nav-block">
+            <a
+              class="nav-link my-2 my-sm-0"
+              href="http://127.0.0.1:8000/#aboutSection"
+              ><span class="fa fa-users"></span>About Us</a
+            >
+          </div>
+          <div class="nav-block">
+            <a class="nav-link my-2 my-sm-0" href="#"
+              ><span class="fa fa-cogs"></span>Services</a
+            >
+          </div>
+          <div class="nav-block">
+            <a class="nav-link my-2 my-sm-0" href="#"
+              ><i class="fa fa-tasks"></i>Our Projects</a
+            >
+          </div>
+          <div class="nav-block">
+            <a class="nav-link my-2 my-sm-0" href="#"
+              ><i class="fa fa-phone-square"></i>Contact Us</a
+            >
+          </div>
+        </div>
+      </nav>
     </header>
-    <main style="margin-top: 3rem;">
-        {% block body %}
+    <!-- NavBar End -->
+    {% block body %} {% endblock %}
+    <!-- Footer Start -->
+    <footer style="background-color: #2c292f">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4 text-center text-md-left">
+            <div class="py-0">
+              <h3 class="my-4 text-white">
+                About<span class="mx-2 m-f" style="color: blueviolet"
+                  >CICC</span
+                >
+              </h3>
 
-        {% endblock %}
-        <!-- FOOTER -->
-        <footer class="container">
-            <p class="float-end"><a href="#">Back to top</a></p>
-            <p>&copy; 2017–2021 CICC, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-        </footer>
+              <p class="footer-links font-weight-bold">
+                <a class="text-white" href="#">Home</a>
+                |
+                <a class="text-white" href="#">About Us</a>
+                |
+                <a class="text-white" href="#">Services</a>
+                |
+                <a class="text-white" href="#">Projects</a>
+              </p>
+              <p class="text-light py-4 mb-4">&copy;2021 CICC</p>
+            </div>
+          </div>
+          <div class="col-md-4 text-white text-center text-md-left">
+            <div class="py-2 my-4">
+              <div>
+                <p class="text-white">
+                  <i class="fa fa-map-marker mx-2"></i>
+                  Gaushala - Kathmandu,
+                </p>
+              </div>
 
-    </main>
+              <div>
+                <p>
+                  <i class="fa fa-phone mx-2"></i> +977 9999999999 , +977
+                  9999999999
+                </p>
+              </div>
+              <div>
+                <p>
+                  <i class="fa fa-envelope mx-2"></i
+                  ><a href="mailto:cicc@gmail.com">cicc@gmail.com</a>
+                </p>
+              </div>
+              <div>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7064.5066262105165!2d85.34166667496578!3d27.709464079604626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1979b37f998b%3A0x89608cc1a83425f1!2sGaushala%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1618986650411!5m2!1sen!2snp"
+                  width="300"
+                  height="150"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 text-white my-4 text-center text-md-left">
+            <span class="font-weight-bold">About the Company</span>
+            <p class="text-warning my-2">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Aspernatur, dolores voluptatum error inventore consectetur,
+            </p>
+            <div class="py-2">
+              <center>
+                <a
+                  href="https://www.facebook.com/CICC-Civil-Innovators-Constructions-Consultant-pvtltd-107630241456836"
+                  ><i class="fab fa-facebook fa-2x text-primary mx-3"></i>
+                </a>
+              </center>
 
+              <!-- 
+            <a href="#"
+              ><i class="fab fa-instagram fa-2x text-danger mx-3"></i
+            ></a>
+            <a href="#"
+              ><i class="fab fa-linkedin fa-2x text-info mx-3"></i
+            ></a>
+            <a href="#"
+              ><i class="fab fa-youtube fa-2x text-danger mx-3"></i
+            ></a>
+              -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
 
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{% static 'bootstrap/js/jquery.js' %}"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script> -->
-    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-</body>
-
+    <script>
+      window.addEventListener("scroll", function () {
+        let header = document.querySelector("header");
+        let windowPosition = window.scrollY > 0;
+        header.classList.toggle("scrolling-active", windowPosition);
+      });
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

@@ -2,8 +2,11 @@ from django.db import models
 
 from wagtail.core.models import Page
 from wagtail.core.fields import RichTextField
-from wagtail.admin.edit_handlers import FieldPanel
+from wagtail.admin.edit_handlers import FieldPanel, FieldRowPanel, InlinePanel, MultiFieldPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
+from modelcluster.fields import ParentalKey
+from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
+
 
 
 class HomePage(Page):

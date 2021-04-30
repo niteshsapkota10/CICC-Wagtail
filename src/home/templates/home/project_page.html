@@ -1,24 +1,58 @@
-{% extends "base.html" %}
-{% load static %}
-{% load wagtailcore_tags wagtailimages_tags %}
+{% extends "base.html" %} {% load static %} {% load wagtailcore_tags wagtailimages_tags %} {% block body %}
+<br /><br /><br /><br /><br /><br /><br />
+<section class="services">
+  <div class="container">
+    <div class="services-title">
+      <div class="title">
+        <h2><span> Our </span> Projects</h2>
+        <br />
+      </div>
+    </div>
 
-{% block body %}
-<h1>Projects</h1>
-
+    <div class="services-box">
+      {% for project in projects %}
+      <div class="box">
+        <div class="ser-box">
+          <div class="icon">
+            {% image project.specific.project_image width-300 as tmp_photo %}
+            <img
+              src="{{ tmp_photo.url }}"
+              alt=""
+              height="150px"
+              width="150px"
+            />
+          </div>
+          <h4>{{project.project_title}}</h4>
+          <p>{{project.project_subtitle}}}</p>
+          <p>
+            <a class="btn btn-secondary" href="{% pageurl project %}"
+              >View details &raquo;</a
+            >
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- <h1>Projects</h1>
 
 <div class="container">
-    <div class="row">
-        {% for project in projects %}
-        <div class="col-lg-6">
-            {% image project.specific.project_image width-300 as tmp_photo %}
-            <img src="{{tmp_photo.url}}" alt="" width="350px" height="400px">
-            <h2>{{project.project_title}}</h2>
-            <p>{{project.project_subtitle}}</p>
-            <p><a class="btn btn-secondary" href="{% pageurl project %}">View details &raquo;</a></p>
-            <hr>
-        </div>
-        {% endfor %}
+  <div class="row">
+    {% for project in projects %}
+    <div class="col-lg-6">
+      {% image project.specific.project_image width-300 as tmp_photo %}
+      <img src="{{tmp_photo.url}}" alt="" width="350px" height="400px" />
+      <h2>{{project.project_title}}</h2>
+      <p>{{project.project_subtitle}}</p>
+      <p>
+        <a class="btn btn-secondary" href="{% pageurl project %}"
+          >View details &raquo;</a
+        >
+      </p>
+      <hr />
     </div>
-</div>
-
+    {% endfor %}
+  </div>
+</div> -->
 {% endblock %}
